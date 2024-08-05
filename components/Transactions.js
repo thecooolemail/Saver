@@ -130,11 +130,11 @@ console.log("Dataarray", dateArray)
         }
 
         return(
-        <div ref={today ? todayRef : null}  style={{display: 'flex', flexDirection: 'row', width: '100%', backgroundColor: today ? "var(--accentcolor)" : 'var(--backgroundCol)'}}>
+        <div key={x.Date.toDateString()} ref={today ? todayRef : null}  style={{display: 'flex', flexDirection: 'row', width: '100%', backgroundColor: today ? "var(--accentcolor)" : 'var(--backgroundCol)'}}>
             <div style={{ display: 'flex', flexDirection: 'row', gap: '5px', paddingRight: '10px'}}>
             {x.IncomeTrans?.map(x => {
                 return(
-                    <div style={{height: "100%",maxWidth: '1px', backgroundColor: 'black', border: today ?  'dashed 1px var(--accentcolor)' : 'solid 1px var(--accentcolor)'}}/>
+                    <div key={Math.random()} style={{height: "100%",maxWidth: '1px', backgroundColor: 'black', border: today ?  'dashed 1px var(--accentcolor)' : 'solid 1px var(--accentcolor)'}}/>
                 )
             })}
             </div>
