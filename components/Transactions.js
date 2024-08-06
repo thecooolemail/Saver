@@ -148,16 +148,16 @@ console.log("Dataarray", dateArray)
                 {x.Transactions?.map((x, index) => (
                 <div key={index} style={{display: 'flex', flexDirection: 'row', gap: '10px', width: '100%'}}>
                 {x.Income ? 
-                <p style={{fontWeight: '1000', WebkitTextStroke: '1px', color: today ? 'var(--backgroundCol)' : 'var(--accentcolor)'}}>+</p>
+                <p style={{fontWeight: '1000', fontFamily: 'ariel',fontWeight: '1000', WebkitTextStroke: '2px',marginTop: '-2px', color: today ? 'var(--backgroundCol)' : 'var(--accentcolor)'}}>+</p>
                 : 
-                <p style={{fontWeight: '1000', WebkitTextStroke: '1px', color: today ? 'var(--backgroundCol)' : 'var(--accentcolor)'}}>-</p>
+                <p style={{fontWeight: '1000', fontFamily: 'ariel',fontWeight: '1000', WebkitTextStroke: '2px',marginTop: '-2px', color: today ? 'var(--backgroundCol)' : 'var(--accentcolor)'}}>-</p>
                 }
                 <p style={{color: today ? 'var(--backgroundCol)' : 'var(--accentcolor)'}}>£{x.Amount}</p>
                 <p style={{color: today ? 'var(--backgroundCol)' : 'var(--accentcolor)'}}>{x.Description}</p>
                 {x.Income &&
                 <p style={{color: today ? 'var(--backgroundCol)' : 'var(--accentcolor)'}}> Saving {x.SavePercent}%(£{(x.Amount * (x.SavePercent/100))}) | Spending £{x.Amount - (x.Amount * (x.SavePercent/100))} (£{x.DailyBudget} PerDay till {new Date(x.SpendTill).toDateString().slice(4, 10)} ({x.Days}Days)) </p>
             }
-                <button style={{color: today ? 'var(--backgroundCol)' : 'var(--accentcolor)'}} onClick={() => Delete(x.Id)}>x</button>
+                <button style={{color: today ? 'var(--backgroundCol)' : 'var(--accentcolor)', marginRight: '15px', fontSize: '15px'}} onClick={() => Delete(x.Id)}>x</button>
               </div>
             ))}
             <div style={{width: '100%', height: '1px', opacity: '0.5', border: 'solid 0.5px var(--accentcolor)'}}/>

@@ -75,7 +75,7 @@ useEffect(() => {
     return(
         <div>
         <form onSubmit={AddIt} style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '0px', flexWrap: 'wrap'}}>
-            <p style={{padding: '10px 0px', paddingRight: '10px', fontWeight: '1000', WebkitTextStroke: '1px'}}>+</p>
+            <p style={{padding: '10px 0px', paddingRight: '10px', fontFamily: 'ariel',fontWeight: '1000', WebkitTextStroke: '2px',marginTop: '-2px'}}>+</p>
             <input ref={Description} required placeholder="Description" style={{width: '150px'}}></input>
             <div style={{display: 'flex', flexDirection: 'row', gap: '5px'}}>
                 <p>£</p>
@@ -84,22 +84,22 @@ useEffect(() => {
 
             <div style={{display: 'flex', flexDirection: 'row', gap: '5px'}}>
                 <p>%</p>
-                <input ref={SavePer} onChange={(x) => setPercents(x.target.value)} required type="number" min="0" max="100" placeholder="Save" style={{width: '100px'}}></input>
+                <input ref={SavePer} onChange={(x) => setPercents(x.target.value)} required type="number" min="0" max="100" placeholder="Save" style={{width: '50px'}}></input>
             </div>
             
             <div style={{display: 'flex', flexDirection: 'row', gap: '0px'}}>
-                <p>{`From:`}</p>
-                <input style={{width: '120px'}} required onClick={() => Datepicker.current.showPicker()} onChange={(x) => setDateGots(x.target.value)} ref={Datepicker} type="date" value={DateGots}/>
+                <p>{`Date:`}</p>
+                <input style={{width: '105px'}} required onClick={() => Datepicker.current.showPicker()} onChange={(x) => setDateGots(x.target.value)} ref={Datepicker} type="date" value={DateGots}/>
             </div>
 
             <div style={{display: 'flex', flexDirection: 'row', gap: '0px'}}>
-                <p>{`Till:`}</p>
-                <input style={{width: '120px'}} required onClick={() => Datepicker2.current.showPicker()} onChange={(x) => setDatetills(x.target.value)} ref={Datepicker2} type="date" value={Datetills}/>
+                <p>{`Spend Till:`}</p>
+                <input style={{width: '105px'}} required onClick={() => Datepicker2.current.showPicker()} onChange={(x) => setDatetills(x.target.value)} ref={Datepicker2} type="date" value={Datetills}/>
             </div>
 
-            <button>Add</button>
-        </form>
             <p style={{display: cancalc ? "flex": 'none', marginRight: '20px', opacity: '0.6'}}>Save £{save} | Spend £{Amounts - save} (£{dailyLimit} PerDay over {days}day(s))</p>
+            <button>Add Income</button>
+        </form>
         </div>
     )
 }

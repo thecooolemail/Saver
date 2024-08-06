@@ -42,14 +42,20 @@ const AddIt = (e) => {
 }
     return(
         <form onSubmit={AddIt} style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '0px', flexWrap: 'wrap'}}>
-            <p style={{padding: '10px 0px', paddingRight: '10px', fontWeight: '1000', WebkitTextStroke: '1px'}}>-</p>
+            <p style={{padding: '10px 0px', paddingRight: '10px', fontFamily: 'ariel',fontWeight: '1000', WebkitTextStroke: '2px',marginTop: '-2px'}}>-</p>
             <input ref={Description} required placeholder="Description" style={{width: '150px'}}></input>
             <div style={{display: 'flex', flexDirection: 'row', gap: '5px'}}>
             <p>£</p>
             <input ref={Amount} required type="number" placeholder="Amount" style={{width: '100px'}}></input>
             </div>
-            <input required onClick={() => Datepicker.current.showPicker()} onChange={(x) => setdate(x.target.value)} ref={Datepicker} type="date" value={date}></input>
-            <button>Add</button>
+
+            <div style={{display: 'flex', flexDirection: 'row', gap: '0px'}}>
+                <p>{`Date:`}</p>
+                <input required onClick={() => Datepicker.current.showPicker()} onChange={(x) => setdate(x.target.value)} ref={Datepicker} type="date" value={date}></input>
+            </div>
+
+
+            <button>Add Expenses</button>
         </form>
     )
 }
