@@ -170,13 +170,13 @@ const Container_Add = ({Close, AutoDate}) => {
               
             <div className={styles.inputContainer} style={{display: out ? 'none' : 'flex', padding: '0px',height: '40px', width: '230px', position: 'relative'}}>
                 <input style={{borderRadius: '20px'}} defaultValue={savepercent}  type="range" onChange={(e) => setsavepercent(e.target.value)} min="0" max="100" id="myRange"/>
-                <p style={{position: 'absolute', alignSelf: 'center',left: '20px', pointerEvents: 'none', fontSize: '12px'}}>Save {savepercent}% {saveAmount && `(£${saveAmount})`}</p>
+                <p style={{position: 'absolute', alignSelf: 'center',left: '20px', pointerEvents: 'none',touchAction: 'none', fontSize: '12px'}}>Save {savepercent}% {saveAmount && `(£${saveAmount})`}</p>
             </div>
 
 
             <div className={styles.inputContainer} style={{display: out ? 'none' : 'flex', padding: '0px',height: '40px', width: '230px', position: 'relative'}}>
                 <input style={{borderRadius: '20px'}} defaultValue={spendover} type="range" onChange={(e) => setspendover(e.target.value)} min="0" max="9" id="myRange"/>
-                <p style={{position: 'absolute', alignSelf: 'center', left: '20px', pointerEvents: 'none', fontSize: '12px', fontSize: '12px'}}>Spend Over {spendOverOptions[spendover]} {dailyBudget && `(£${dailyBudget}/day)`}</p>
+                <p style={{position: 'absolute', alignSelf: 'center', left: '20px', pointerEvents: 'none',touchAction: 'none', fontSize: '12px', fontSize: '12px'}}>Spend Over {spendOverOptions[spendover]} {dailyBudget && `(£${dailyBudget}/day)`}</p>
             </div>
 
             <button style={{width: '230px', borderRadius: '20px'}} onClick={() => Submit()}>Add</button>

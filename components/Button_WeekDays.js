@@ -15,7 +15,7 @@ const Button_WeekDays = ({info, re, Amount, FullView}) => {
             <small style={{textAlign: 'center', whiteSpace: 'nowrap'}}>{info.Day} {info.Date.getDate()}</small>
             <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: '3px'}}>
                 {info.Transactions?.map(x => {
-                    return(<div style={{height: '5px', aspectRatio: '1/1', backgroundColor: x.In ? '#35C759' : "#FF3B2F", borderRadius: '100px'}}/>)
+                    return(<div key={x?.UUID} style={{height: '5px', aspectRatio: '1/1', backgroundColor: x.In ? '#35C759' : "#FF3B2F", borderRadius: '100px'}}/>)
                 })}
             </div>
                 
