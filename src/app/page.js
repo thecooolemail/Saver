@@ -1,19 +1,19 @@
 import styles from '../app/styles/custom.module.css'
-import Expense from '../../components/Expense';
-import TransactionsUI from '../../components/Transactions';
-import Income from '../../components/Income';
+
+import Container_Top from '../../components/Container_Top';
+import Container_Days from '../../components/Container_Days';
+
+import NavBar from '../../components/NavBar';
+import Loader from '../../components/Loader';
 
 export default function Home() {
   return (
     <div className={styles.root}>
-      <div style={{width: '100%', height: '1px', opacity: '0.5', border: 'solid 0.5px var(--accentcolor)', marginTop: '10px'}}/>
-      <TransactionsUI></TransactionsUI>
-      
-      <div style={{position: 'fixed', zIndex: 1, bottom: '0px', width: '100vw', backgroundColor: 'var(--backgroundCol)', padding: '10px 20px', borderTop: 'solid 0.5px var(--accentcolor)'}}>
-        <Income/>
-        <div style={{width: '100%', height: '1px', opacity: '0.2', border: 'solid 0.5px var(--accentcolor)', marginTop: '10px'}}/>
-        <Expense/>
-      </div>
+      <Loader/>
+      <Container_Top/>
+      <Container_Days/>
+      <NavBar></NavBar>
       </div>
   );
 }
+
