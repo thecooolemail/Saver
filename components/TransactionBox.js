@@ -52,20 +52,26 @@ const TransactionBox = ({Info}) => {
     return(
         <div className={styles.TransactionBoxRoot}>
             
-                <div style={{display: 'flex', flexDirection: 'column',justifyContent: 'center' ,alignItems: 'flex-start', gap: '10px', flex: 1}}>
-                    <div style={{scale: 0.6, height: '40px', marginLeft: '-10px', color: 'black','--Iconcolor': 'black'}} >
-                   
-                    {Tag[0].svg}
+                <div style={{flex: 1,width: '100%', display: 'flex', flexDirection: 'row',justifyContent: 'center' , alignItems: 'center'}}>
+                    <div style={{flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start', gap: '5px'}}>
+                        <div style={{scale: 0.6, height: '40px', marginLeft: '-5px', color: 'black','--Iconcolor': 'black'}} >{Tag[0].svg}</div>
+                        <div style={{display: 'flex', flexDirection: 'row', gap: '5px'}}>
+                            <p style={{display: Info.Description ? 'flex' : 'none', whiteSpace: 'nowrap'}}>{Info?.Description}</p>
+                            <p style={{display: Info.In ? 'flex' : 'none', whiteSpace: 'nowrap'}}>{differenceInDays}/{Info.SaveOverDays} </p>
                         </div>
+                    </div>
+                    <div style={{display: 'flex', flexDirection: 'row', gap: '10px'}}>
+                        <b style={{whiteSpace: 'nowrap', backgroundColor: Amount >= 0 ?  '#35C759' : '#FF3B2F', padding: '5px 10px', borderRadius: '5px', color: 'white'}}>{Amount >= 0 ? "+" : "-"}£{Math.abs(Number(Amount)).toFixed(2)}</b>
+                        <h4  onClick={() => RemoveTransaction({Id: Info.UUID, }, UpdateTransactions()) }>x</h4>
+                    </div>
                     
-                  
-                    <p style={{display: Info.In ? 'flex' : 'none', whiteSpace: 'nowrap'}}>{Info?.Description} {differenceInDays}/{Info.SaveOverDays} </p>
-                    <p style={{display: Info.In ? 'flex' : 'none', whiteSpace: 'nowrap'}}> Save £{Info.Amount*(Info.SavePercent/100)}({Info.SavePercent}%) Spend £{Info.Amount - Info.Amount*(Info.SavePercent/100)}({100-Info.SavePercent}%) = £{Info.Amount}</p>
+                    
                   
                 </div>
 
-                <b style={{whiteSpace: 'nowrap', backgroundColor: Amount >= 0 ?  '#35C759' : '#FF3B2F', padding: '5px 10px', borderRadius: '5px', color: 'white'}}>{Amount >= 0 ? "+" : "-"}£{Math.abs(Number(Amount)).toFixed(2)}</b>
-                <h4  onClick={() => RemoveTransaction({Id: Info.UUID, }, UpdateTransactions()) }>x</h4>
+                
+
+                <p style={{display: Info.In ? 'flex' : 'none', whiteSpace: 'nowrap'}}> Save £{Info.Amount*(Info.SavePercent/100)}({Info.SavePercent}%) Spend £{Info.Amount - Info.Amount*(Info.SavePercent/100)}({100-Info.SavePercent}%) = £{Info.Amount}</p>
         </div>
     )
 

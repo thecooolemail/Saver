@@ -1,3 +1,4 @@
+
 "use client"
 import { useEffect, useRef, useState } from 'react';
 import GetWeeks from '../Functions/GetWeeks';
@@ -68,7 +69,7 @@ const Container_Top = () => {
                 let SectionedTransactions = []
                 Week.map(day => {
                     //Induvidual Days
-                    
+                    let dayTransactions = []
                     let formdate = new Date(day.Date)
                     formdate.setHours(0, 0, 0, 0); 
                     let tempar = [] 
@@ -77,7 +78,7 @@ const Container_Top = () => {
                         Transactions.Transactions.map(e => {
                             let temp = new Date(e.Date)
                             if(temp.getTime() <= formdate.getTime()) tempar.push(e)
-                            if(temp.getTime() === formdate.getTime()) SectionedTransactions.push(e)
+                            if(temp.getTime() === formdate.getTime()) {SectionedTransactions.push(e) ; dayTransactions.push(e)}
                         })
 
                         //Tempar is all transaction before specific date
@@ -100,7 +101,7 @@ const Container_Top = () => {
                         DayDate.setHours(0, 0, 0, 0); //
                         return DayDate.getTime() === formdate.getTime();
                     })
-                    tempMa[Index][man] = {Date: tempMa[Index][man].Date , Day: tempMa[Index][man].Day, Amount: Number(total).toFixed(0)}
+                    tempMa[Index][man] = {Date: tempMa[Index][man].Date , Day: tempMa[Index][man].Day, Amount: Number(total).toFixed(0), Transactions: dayTransactions}
                 })
 
                 
@@ -125,7 +126,7 @@ const Container_Top = () => {
     return(
         <div className={styles.ContainerWeekRoot}>
             {MasterArrayData?.length >= 1 && MasterArrayData.map(We => {
-
+                console.log("34534", We)
                 let NewMonth = false
                 We.map((e, Index) => {if(Index != 99 && e.Date.getDate() === 1){NewMonth = true}})
                 

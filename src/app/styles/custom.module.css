@@ -251,7 +251,8 @@
         justify-content: center;
         overflow: none;
         padding: 10px 5px;
-        opacity: 0.1;
+        opacity: 0.15;
+        gap: 2px;
     }
 
     .ButtonWeekDaySelectedN{
@@ -263,7 +264,7 @@
         overflow: none;
         border-radius: 20px;
         padding: 10px 5px;
-        
+        gap: 2px;
     }
 
 
@@ -307,11 +308,11 @@
         width: calc(100% - 60px);
         padding: 15px 30px;
         display: flex;
-        align-items: center;
-        flex-direction: row;
+        align-items: flex-start;
+        flex-direction: column;
         background-color: white;
         border-radius: 15px;
-        gap: 10px;
+        gap: 6px;
     }
 
     .TransactionBoxInner{
