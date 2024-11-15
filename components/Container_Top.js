@@ -136,7 +136,7 @@ const Container_Top = () => {
                 for(let i = 0; i < fillerDays; i++){fillerDaysDivs.push(<div className={styles.ButtonWeekDayN}/>)}
 
                 return(
-                    <div className={styles.IndividualWeeks}>
+                    <div key={Math.random()} className={styles.IndividualWeeks}>
                         <div style={{backgroundColor: 'white', borderRadius: '10px', padding: '20px 0px'}}>
                         <p style={{color: 'black', zIndex: 2, textAlign: 'center'}}>{MonthNames[We[0]?.Date.getMonth()]}</p>
                         {CalView.WeekView && <AreaChartComp Data={We}/>}

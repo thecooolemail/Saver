@@ -58,7 +58,7 @@ const Container_Days = () => {
         <div onScrollCapture={(event) => debounce()} className={styles.ContainerDaysRoot} style={{zIndex: 2}} >
             {Days.map(x => {
                 return(
-            <DayFullView info={x} re={todayRef} scrolling={scrolling}/>
+            <DayFullView key={x.Date.toDateString()} info={x} re={todayRef} scrolling={scrolling}/>
             )
             })}
         </div>

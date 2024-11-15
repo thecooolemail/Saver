@@ -10,8 +10,8 @@ const TagSelect = ({SendTag}) => {
         <div className={styles.tagselect}>
 
             <div className={styles.tagsgrid}>
-                {Tags.slice(0, ShowAll ? Tags.length : 6).map(e => {
-                    return(<div onClick={() => SendTag(e)} className={styles.tagButton} style={{backgroundColor: e.In ? '#35C759' : "#FF3B2F"}}><div style={{scale: '0.9'}}>{e.svg}</div></div>)
+                {Tags.slice(0, ShowAll ? Tags.length : 6).map((e,index) => {
+                    return(<div key={index} onClick={() => SendTag(e)} className={styles.tagButton} style={{backgroundColor: e.In ? '#35C759' : "#FF3B2F"}}><div style={{scale: '0.9'}}>{e.svg}</div></div>)
                 })}
             </div>
                 <div className={styles.tagButton}onClick={() => setShowAll(!ShowAll)}><b style={{fontSize: '10px', opacity: '1', color: 'black'}}>{ShowAll ? "Less" : "More"}</b></div>
