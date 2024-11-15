@@ -11,7 +11,7 @@ export const metadata = {
 
 
 const Normal = localFont({
-  src: '../../public/fonts/SfPro/SF-Pro.woff2',
+  src: '../../public/Fonts/SfPro/SF-Pro.woff2',
   variable: '--fontfamily',
   weight: '300',
   display: 'swap',

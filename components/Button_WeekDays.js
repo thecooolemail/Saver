@@ -5,6 +5,8 @@ import styles from '../src/app/styles/custom.module.css'
 const Button_WeekDays = ({info, re, Amount, FullView}) => {
    
     const DaySelected = DayPicked()
+
+    console.log("324", info)
       
     return(
         <div id={info.Date.getDate()} onClick={() => {DaySelected.setFullDayScroll(undefined) ; DaySelected.setDay(info.Date.toDateString())}} className={DaySelected.Date === info.Date.toDateString() ? styles.ButtonWeekDaySelectedN : styles.ButtonWeekDayN} ref={DaySelected.Date === info.Date.toDateString() ? re : null}>
